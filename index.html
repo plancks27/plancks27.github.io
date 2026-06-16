@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PLANCKS 2027 — Honduras | IAPS Physics Competition</title>
+  <meta name="description" content="Physics League Across Numerous Countries for Kick-ass Students. The official site of PLANCKS 2027, hosted in Honduras — the first edition in Central America." />
+  <meta property="og:title" content="PLANCKS 2027 Honduras" />
+  <meta property="og:description" content="International physics competition coming to Central America for the first time." />
+  <meta property="og:image" content="assets/logo.png" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Estilos adicionales para el PDF manteniendo la estética original */
+    .itinerary-pdf-container {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(200, 90, 24, 0.3);
+      margin-top: 2rem;
+    }
+
+    .pdf-toolbar {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(200, 90, 24, 0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .pdf-badge {
+      background: #9B1C1C;
+      color: #F0E8D0;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .pdf-buttons {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .pdf-btn {
+      background: transparent;
+      border: 1px solid rgba(200, 90, 24, 0.4);
+      padding: 0.5rem 1.25rem;
+      border-radius: 40px;
+      color: #F0E8D0;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      font-weight: 500;
+    }
+
+    .pdf-btn:hover {
+      background: #C85A18;
+      border-color: #C85A18;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .pdf-embed-wrapper {
+      background: #0a0a0a;
+      height: 600px;
+      position: relative;
+    }
+
+    .pdf-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .pdf-footer {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.75rem 1.5rem;
+      border-top: 1px solid rgba(200, 90, 24, 0.2);
+      text-align: center;
+    }
+
+    .pdf-footer a {
+      color: #C85A18;
+      text-decoration: underline;
+    }
+
+    .pdf-footer p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: rgba(240, 232, 208, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .pdf-embed-wrapper {
+        height: 450px;
+      }
+      
+      .pdf-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .pdf-buttons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════ NAVIGATION ═══════════════════════════ -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo">
+      <img src="assets/logo.png" alt="PLANCKS Honduras logo" class="nav-logo-img" />
+      <div class="nav-wordmark">
+        PLANCKS Honduras
+        <span>IAPS · 2027</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#honduras">Host City</a></li>
+      <li><a href="#itinerary">Itinerary</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#sponsors">Sponsors</a></li>
+      <li><a href="#contact" class="nav-register">Register</a></li>
+    </ul>
+
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class="nav-mobile" id="mobileNav" role="dialog" aria-label="Mobile navigation">
+    <button class="nav-close" id="mobileClose" aria-label="Close menu">&times;</button>
+    <a href="#about">About</a>
+    <a href="#honduras">Host City</a>
+    <a href="#itinerary">Itinerary</a>
+    <a href="#venue">Venue</a>
+    <a href="#faq">FAQ</a>
+    <a href="#committee">Committee</a>
+    <a href="#sponsors">Sponsors</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+
+  <!-- ═══════════════════ HERO ══════════════════════════════════ -->
+  <section id="hero" aria-label="Hero">
+
+    <div class="hero-bg-pattern" aria-hidden="true"></div>
+
+    <!-- Logo — large, coloured, right side of hero -->
+    <img
+      src="assets/logo.png"
+      alt="PLANCKS Honduras official logo — guacamaya escarlata en estilo maya"
+      class="hero-logo-visible"
+      id="heroLogo"
+    />
+
+    <div class="hero-inner">
+      <div class="hero-meta">
+        <span class="eyebrow">IAPS International Physics Competition</span>
+        <div class="hero-meta-sep"></div>
+        <span class="eyebrow" style="color:rgba(232,160,96,0.5);">Honduras · 2027</span>
+      </div>
+
+      <h1 class="hero-title">
+        PLANCKS<br>
+        <em>Honduras</em><br>
+        2027
+      </h1>
+
+      <p class="hero-subtitle">
+        Physics League Across Numerous Countries for Kick-ass Students.
+        The first edition of PLANCKS in Central America — where the
+        ancient Maya civilisation meets the frontier of modern physics.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#about" class="btn-primary">Discover the Event</a>
+        <a href="#itinerary" class="btn-ghost">View Itinerary ↓</a>
+      </div>
+    </div>
+
+    <div class="hero-stats" role="region" aria-label="Event statistics">
+      <div class="hero-stat">
+        <div class="stat-number">30<span style="font-size:0.55em;color:var(--amber-light);">+</span></div>
+        <div class="stat-label">Countries</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-number">120<span style="font-size:0.55em;color:var(--amber-light);">+</span></div>
+        <div class="stat-label">Student Teams</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Days of Science</div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════ ABOUT PLANCKS ════════════════════════ -->
+  <section id="about" class="section-pad" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-label">
+          <div class="section-number" aria-hidden="true">01</div>
+          <p class="eyebrow reveal">About</p>
+        </div>
+
+        <div class="about-content">
+          <h2 id="about-title" class="reveal">
+            Physics League Across<br>Numerous Countries<br><em>for Kick-ass Students</em>
+          </h2>
+
+          <p class="reveal reveal-delay-1">
+            PLANCKS is the premier international physics competition for bachelor's and master's
+            students, organised by the International Association of Physics Students (IAPS).
+            Each edition gathers the brightest young physicists from across the globe to
+            compete, collaborate, and forge lasting scientific bonds.
+          </p>
+
+          <p class="reveal reveal-delay-2">
+            Teams of three to four tackle rigorous theoretical problems spanning all domains of
+            physics — classical mechanics, electromagnetism, quantum theory, statistical physics,
+            relativity, astrophysics, and more — crafted by leading professors worldwide.
+          </p>
+
+          <p class="reveal reveal-delay-2">
+            Beyond competition, PLANCKS is a four-day cultural and scientific exchange:
+            symposia, laboratory visits, excursions, and an awards ceremony that celebrates
+            excellence in physics education on an international stage.
+          </p>
+
+          <div class="about-pillars reveal reveal-delay-3" role="list">
+            <div class="pillar" role="listitem">
+              <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+              <h4>The Competition</h4>
+              <p>A 3-hour theoretical exam of extraordinary depth, crafted by world-class physicists.</p>
+            </div>
+            <div class="pillar" role="listitem">
+              <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <h4>International Community</h4>
+              <p>Delegates from 30+ nations form friendships and collaborations that last careers.</p>
+            </div>
+            <div class="pillar" role="listitem">
+              <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+              <h4>Cultural Immersion</h4>
+              <p>Each edition explores the host country's history, landscape, and scientific heritage.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Geometric divider -->
+  <div class="section-divider container" aria-hidden="true">
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+      <polygon points="15,2 28,8.5 28,21.5 15,28 2,21.5 2,8.5" stroke="#3D1A0C" stroke-width="1" fill="none"/>
+      <polygon points="15,8 22,12 22,18 15,22 8,18 8,12" fill="#C85A18" opacity="0.45"/>
+      <circle cx="15" cy="15" r="2.5" fill="#9B1C1C"/>
+    </svg>
+  </div>
+
+
+  <!-- ═══════════════════ ABOUT HONDURAS ═══════════════════════ -->
+  <section id="honduras" class="section-pad" aria-labelledby="honduras-title">
+    <div class="container">
+
+      <!-- Decorative logo watermark background -->
+      <img src="assets/logo.png" alt="" class="honduras-parrot-bg" aria-hidden="true" />
+
+      <div class="honduras-grid">
+
+        <div>
+          <p class="eyebrow reveal">Host Country</p>
+          <h2 id="honduras-title" class="display-lg reveal reveal-delay-1"
+              style="color:var(--cream);margin-top:0.75rem;margin-bottom:1.5rem;">
+            The Heart of<br>Central America
+          </h2>
+
+          <p class="body-lg reveal reveal-delay-2" style="color:rgba(240,232,208,0.7);">
+            Honduras — a land of volcanic mountains, ancient Maya civilisation, and
+            extraordinary biodiversity — will host PLANCKS for the first time ever
+            in Central America. A historic milestone in the competition's history.
+          </p>
+
+          <p class="reveal reveal-delay-2"
+             style="color:rgba(240,232,208,0.55);font-size:0.95rem;line-height:1.82;margin-top:1rem;max-width:540px;">
+            Home to Copán — one of the great Maya ceremonial centres and a UNESCO
+            World Heritage Site — and to cloud forests, coral reefs, and colonial cities,
+            Honduras offers an incomparable cultural backdrop for an international
+            scientific gathering.
+          </p>
+
+          <div class="honduras-facts reveal reveal-delay-3" role="list">
+            <div class="fact-card" role="listitem">
+              <div class="stat-number">2027</div>
+              <div class="stat-label">Edition Year</div>
+              <p>Dates TBD · Honduras</p>
+            </div>
+            <div class="fact-card" role="listitem">
+              <div class="stat-number">1st</div>
+              <div class="stat-label">In Central America</div>
+              <p>Historic milestone</p>
+            </div>
+            <div class="fact-card" role="listitem">
+              <div class="stat-number">13th</div>
+              <div class="stat-label">PLANCKS Edition</div>
+              <p>Since Utrecht 2014</p>
+            </div>
+            <div class="fact-card" role="listitem">
+              <div class="stat-number">4</div>
+              <div class="stat-label">Days</div>
+              <p>Science &amp; Culture</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logo as the visual element in this section -->
+        <div class="reveal reveal-delay-2" style="display:flex;flex-direction:column;align-items:center;gap:1.5rem;">
+          <img
+            src="assets/logo.png"
+            alt="PLANCKS Honduras — guacamaya escarlata en estilo maya prehispánico"
+            class="honduras-logo-display"
+          />
+          <div class="img-accent">
+            <span>Official Logo · PLANCKS</span>
+            <strong>Honduras 2027</strong>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════ ITINERARY PDF (REPLACES SCHEDULE) ═══════════════ -->
+  <section id="itinerary" class="section-pad" aria-labelledby="itinerary-title">
+    <div class="container">
+
+      <div class="schedule-header">
+        <div>
+          <p class="eyebrow reveal">Official Document</p>
+          <h2 id="itinerary-title" class="display-md reveal reveal-delay-1" style="margin-top:0.5rem;">Event Itinerary</h2>
+          <p class="reveal reveal-delay-2" style="color:var(--ink-muted); margin-top:0.75rem; max-width:580px;">
+            Download or view the complete PLANCKS 2027 Honduras itinerary with all schedules, maps, and important information.
+          </p>
+        </div>
+        <div class="schedule-notice reveal">📄 Updated January 2026</div>
+      </div>
+
+      <div class="itinerary-pdf-container reveal reveal-delay-3">
+        
+        <!-- Toolbar with actions -->
+        <div class="pdf-toolbar">
+          <span class="pdf-badge">PLANCKS HONDURAS 2027</span>
+          <div class="pdf-buttons">
+            <button id="downloadPdfBtn" class="pdf-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m-4-4l4 4 4-4"/>
+              </svg>
+              Download PDF
+            </button>
+            <button id="printPdfBtn" class="pdf-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9V3h12v6M6 21h12v-6H6v6zM21 9H3v6h18V9z"/>
+              </svg>
+              Print
+            </button>
+            <button id="sharePdfBtn" class="pdf-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+              </svg>
+              Share
+            </button>
+          </div>
+        </div>
+        
+        <!-- PDF Embed Viewer -->
+        <div class="pdf-embed-wrapper">
+          <iframe 
+            src="pdf/itinerary.pdf" 
+            class="pdf-iframe"
+            title="PLANCKS 2027 Honduras Official Itinerary"
+            frameborder="0"
+            allow="fullscreen"
+          >
+            Your browser does not support PDF viewing. 
+            <a href="pdf/itinerary.pdf">Download the PDF here</a>.
+          </iframe>
+        </div>
+        
+        <!-- Footer note -->
+        <div class="pdf-footer">
+          <p>📄 If the PDF doesn't load automatically, <a href="pdf/itinerary.pdf" download="PLANCKS_2027_Itinerary.pdf">click here to download it directly</a>. File size: ~2.5 MB | English & Spanish versions available</p>
+        </div>
+        
+      </div>
+
+      <!-- Additional info cards matching the site aesthetic -->
+      <div class="about-pillars reveal reveal-delay-4" style="margin-top: 3rem;" role="list">
+        <div class="pillar" role="listitem">
+          <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="9" y1="21" x2="9" y2="9"/>
+          </svg>
+          <h4>Full Schedule</h4>
+          <p>Detailed daily breakdown of all events, lectures, competitions, and social activities.</p>
+        </div>
+        <div class="pillar" role="listitem">
+          <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          <h4>Venue Maps</h4>
+          <p>Campus layouts, accommodation locations, and transportation routes included.</p>
+        </div>
+        <div class="pillar" role="listitem">
+          <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 8v4l3 3M12 22a10 10 0 100-20 10 10 0 000 20z"/>
+          </svg>
+          <h4>Important Info</h4>
+          <p>Rules, code of conduct, emergency contacts, and local recommendations.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Geometric divider -->
+  <div class="section-divider container" aria-hidden="true">
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+      <polygon points="15,2 28,8.5 28,21.5 15,28 2,21.5 2,8.5" stroke="#3D1A0C" stroke-width="1" fill="none"/>
+      <polygon points="15,8 22,12 22,18 15,22 8,18 8,12" fill="#C85A18" opacity="0.45"/>
+      <circle cx="15" cy="15" r="2.5" fill="#9B1C1C"/>
+    </svg>
+  </div>
+
+
+  <!-- ═══════════════════ VENUE ═════════════════════════════════ -->
+  <section id="venue" class="section-pad" aria-labelledby="venue-title">
+    <div class="container">
+      <div class="venue-grid">
+
+        <div class="venue-image-stack reveal">
+          <div class="venue-img-main" aria-label="Venue image placeholder">
+            <div style="text-align:center;padding:2rem;">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="opacity:0.3;margin-bottom:1rem;" aria-hidden="true">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+              <div style="font-family:var(--font-data);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-muted);">
+                Venue Photography<br>Coming Soon
+              </div>
+            </div>
+          </div>
+          <div class="venue-img-secondary">
+            <div style="font-family:var(--font-data);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;">Campus<br>Photo Soon</div>
+          </div>
+        </div>
+
+        <div>
+          <p class="eyebrow reveal">Venue</p>
+          <h2 id="venue-title" class="display-md reveal reveal-delay-1"
+              style="margin-top:0.5rem;margin-bottom:1rem;">
+            [Venue Name<br>To Be Confirmed]
+          </h2>
+          <p class="reveal reveal-delay-2"
+             style="color:var(--ink-soft);font-size:1rem;line-height:1.85;max-width:480px;">
+            The venue details will be announced in early 2026. We are working with leading
+            Honduran academic institutions to secure a world-class setting worthy of
+            PLANCKS's international reputation.
+          </p>
+
+          <ul class="venue-detail-list reveal reveal-delay-3">
+            <li>
+              <svg class="venue-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <div><strong>Location</strong><span>Honduras, Central America — city TBD</span></div>
+            </li>
+            <li>
+              <svg class="venue-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              <div><strong>Date</strong><span>2027 — Exact dates to be announced</span></div>
+            </li>
+            <li>
+              <svg class="venue-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+              </svg>
+              <div><strong>Accommodation</strong><span>Included for all registered participants</span></div>
+            </li>
+            <li>
+              <svg class="venue-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+              </svg>
+              <div><strong>Transportation</strong><span>Shuttle service between accommodation and venues included</span></div>
+            </li>
+            <li>
+              <svg class="venue-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+              <div><strong>Capacity</strong><span>Full competition hall + seminar rooms + social spaces</span></div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════ FAQ ═══════════════════════════════════ -->
+  <section id="faq" class="section-pad" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="faq-grid">
+
+        <div class="faq-intro">
+          <p class="eyebrow reveal">FAQ</p>
+          <h2 id="faq-title" class="display-md reveal reveal-delay-1"
+              style="color:var(--cream);margin-top:0.5rem;">
+            Frequently Asked Questions
+          </h2>
+          <p class="reveal reveal-delay-2">
+            Everything you need to know about registering, competing, and attending
+            PLANCKS 2027 Honduras.
+          </p>
+        </div>
+
+        <div class="faq-list reveal reveal-delay-2">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Who can participate in PLANCKS?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16m8-8H4"/></svg>
+            </button>
+            <div class="faq-answer">
+              PLANCKS is open to bachelor's and master's students of physics or closely related disciplines. Teams consist of three to four members. Most countries hold national preliminaries — the winners represent their nation at the international competition.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How does my country qualify?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16m8-8H4"/></svg>
+            </button>
+            <div class="faq-answer">
+              Each country's IAPS member committee organises a national preliminary. Countries without an existing committee can contact our organising team directly — we actively support new national committees, especially across Latin America and the Caribbean.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What is included in the registration fee?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16m8-8H4"/></svg>
+            </button>
+            <div class="faq-answer">
+              Registration covers accommodation for all event nights, transport between venue and accommodation, all meals during the event, the cultural programme and excursions, access to all scientific sessions, and both opening and closing ceremonies. Flights are not included.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Can I attend as an observer?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16m8-8H4"/></svg>
+            </button>
+            <div class="faq-answer">
+              Yes. Observer registration is available for students, professors, and interested parties who wish to attend the symposia, social events, and cultural programme without competing. Details will be published when registration opens in 2026.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What topics does the exam cover?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16m8-8H4"/></svg>
+            </button>
+            <div class="faq-answer">
+              The exam covers the full breadth of theoretical physics: classical mechanics, electromagnetism, quantum mechanics, statistical physics, thermodynamics, relativity, optics, condensed matter, and astrophysics. Problems are original, challenging, and physically insightful — not merely computational.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Will there be financial support available?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16m8-8H4"/></svg>
+            </button>
+            <div class="faq-answer">
+              We are actively seeking sponsorship to provide travel grants, particularly for teams from countries with limited resources and especially from Latin America and the Caribbean. Details will be published alongside the official registration opening.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How do I stay updated on registration?
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16m8-8H4"/></svg>
+            </button>
+            <div class="faq-answer">
+              Follow IAPS on social media or contact us directly via the email below. Registration will open in early 2026. All national IAPS committees will be notified as soon as dates and fees are confirmed.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SPONSORS ═════════════════════════════ -->
+  <section id="sponsors" class="section-pad" aria-labelledby="sponsors-title">
+    <div class="container">
+      <p class="eyebrow reveal text-center">Partners &amp; Sponsors</p>
+      <h2 id="sponsors-title" class="display-md text-center reveal reveal-delay-1" style="margin-top:0.5rem;margin-bottom:0.5rem;">Supporting PLANCKS Honduras</h2>
+      <p class="text-center body-lg reveal reveal-delay-2" style="max-width:520px;margin-inline:auto;margin-bottom:0;">
+        We gratefully acknowledge the institutions and companies making this historic edition possible.
+      </p>
+
+      <div class="sponsor-tiers reveal reveal-delay-2">
+        <div class="sponsor-tier-label">Platinum</div>
+        <div class="sponsor-row">
+          <div class="sponsor-slot large"><div class="sponsor-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom:0.5rem;opacity:0.25;" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><div>Platinum Sponsor</div></div></div>
+          <div class="sponsor-slot large"><div class="sponsor-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom:0.5rem;opacity:0.25;" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><div>Platinum Sponsor</div></div></div>
+        </div>
+
+        <div class="sponsor-tier-label">Gold</div>
+        <div class="sponsor-row">
+          <div class="sponsor-slot medium"><div class="sponsor-placeholder">Gold Sponsor</div></div>
+          <div class="sponsor-slot medium"><div class="sponsor-placeholder">Gold Sponsor</div></div>
+          <div class="sponsor-slot medium"><div class="sponsor-placeholder">Gold Sponsor</div></div>
+        </div>
+
+        <div class="sponsor-tier-label">Silver &amp; Partners</div>
+        <div class="sponsor-row">
+          <div class="sponsor-slot small"><div class="sponsor-placeholder">Partner</div></div>
+          <div class="sponsor-slot small"><div class="sponsor-placeholder">Partner</div></div>
+          <div class="sponsor-slot small"><div class="sponsor-placeholder">Partner</div></div>
+          <div class="sponsor-slot small"><div class="sponsor-placeholder">Partner</div></div>
+          <div class="sponsor-slot small"><div class="sponsor-placeholder">Partner</div></div>
+        </div>
+      </div>
+
+      <div class="sponsor-cta reveal">
+        <p>Interested in supporting the first PLANCKS in Central America?<br>We offer tailored sponsorship packages for all scales of involvement.</p>
+        <a href="mailto:plancks@iaps-honduras.org" class="btn-primary">Become a Sponsor</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════ FOOTER / CONTACT ═════════════════════ -->
+  <footer id="contact" class="section-pad" aria-labelledby="contact-title">
+    <div class="container">
+
+      <div class="footer-top">
+        <div class="footer-brand">
+          <!-- Logo in footer -->
+          <img src="assets/logo.png" alt="PLANCKS Honduras logo" class="footer-logo" />
+          <div class="footer-brand-name">PLANCKS Honduras 2027</div>
+          <p>Physics League Across Numerous Countries for Kick-ass Students. The first edition in Central America, organised by IAPS Honduras.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <ul>
+            <li><a href="#about">About PLANCKS</a></li>
+            <li><a href="#honduras">Host Country</a></li>
+            <li><a href="#itinerary">Itinerary</a></li>
+            <li><a href="#venue">Venue</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#committee">Committee</a></li>
+            <li><a href="#sponsors">Sponsors</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <div class="contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <a href="mailto:plancks@iaps-honduras.org">plancks@iaps-honduras.org</a>
+          </div>
+          <div class="contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Honduras, Central America</span>
+          </div>
+          <div class="contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <a href="https://iaps.info" target="_blank" rel="noopener">iaps.info</a>
+          </div>
+
+          <h5 style="margin-top:1.75rem;">IAPS</h5>
+          <ul>
+            <li><a href="https://iaps.info" target="_blank" rel="noopener">IAPS Website</a></li>
+            <li><a href="https://iaps.info/events/plancks/" target="_blank" rel="noopener">About PLANCKS</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 PLANCKS Honduras Organising Committee · IAPS Honduras. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Code of Conduct</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* Trigger continuous float after logo entry animation */
+    var heroLogo = document.getElementById('heroLogo');
+    if (heroLogo) {
+      heroLogo.addEventListener('animationend', function() {
+        heroLogo.classList.add('loaded');
+      }, { once: true });
+    }
+    
+    /* PDF Interactive Scripts */
+    (function() {
+        const pdfPath = 'pdf/itinerary.pdf';
+        const pdfFileName = 'PLANCKS_2027_Itinerary.pdf';
+        
+        const downloadBtn = document.getElementById('downloadPdfBtn');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const link = document.createElement('a');
+                link.href = pdfPath;
+                link.download = pdfFileName;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        }
+        
+        const printBtn = document.getElementById('printPdfBtn');
+        if (printBtn) {
+            printBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const printWindow = window.open(pdfPath, '_blank');
+                if (printWindow) {
+                    printWindow.onload = function() {
+                        setTimeout(() => {
+                            printWindow.print();
+                        }, 500);
+                    };
+                } else {
+                    alert('Please allow pop-ups to print the PDF directly, or download and print manually.');
+                }
+            });
+        }
+        
+        const shareBtn = document.getElementById('sharePdfBtn');
+        if (shareBtn) {
+            shareBtn.addEventListener('click', async function(e) {
+                e.preventDefault();
+                const fullUrl = window.location.href.split('#')[0] + pdfPath.substring(1);
+                const shareData = {
+                    title: 'PLANCKS 2027 Honduras - Official Itinerary',
+                    text: 'Check out the official itinerary for PLANCKS 2027 in Honduras!',
+                    url: fullUrl
+                };
+                
+                if (navigator.share && navigator.canShare(shareData)) {
+                    try {
+                        await navigator.share(shareData);
+                    } catch (err) {
+                        if (err.name !== 'AbortError') {
+                            navigator.clipboard.writeText(fullUrl).then(() => {
+                                alert('Link copied to clipboard!');
+                            }).catch(() => {
+                                prompt('Copy this link to share:', fullUrl);
+                            });
+                        }
+                    }
+                } else {
+                    navigator.clipboard.writeText(fullUrl).then(() => {
+                        alert('Link copied to clipboard! You can now share it via email or message.');
+                    }).catch(() => {
+                        prompt('Copy this link to share:', fullUrl);
+                    });
+                }
+            });
+        }
+    })();
+  </script>
+</body>
+</html>
